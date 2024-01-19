@@ -1,0 +1,14 @@
+version: "3.4"
+services:
+  patlite_ctl:
+    build:
+      context: ./docker-file
+      dockerfile: Dockerfile
+    image: patlite:${TAG}
+    container_name: patlite_ctl
+    restart: "no"
+    network_mode: host
+    privileged: true
+    volumes:
+      - /dev:/dev:rw 
+    command: /bin/bash
